@@ -1,9 +1,55 @@
 # Exercise 4.14
-"""Generate single-digit multiplication problems."""
+"""Generate single-digit multiplication problems
+4.14 (COMPUTER-ASSISTED INSTRUCTION) Computer-assisted instruction (CAI) 
+refers to the use of computers in education. Write a script to help an 
+elementary school student learn multiplication. Create a function that 
+randomly generates and returns a tuple of two positive one-digit integers.
+Use that function’s result in your script to prompt the user with a question,
+such as:
+     How much is 6 times 7?
+
+For a correct answer, display the message "Very good!" and ask another
+multiplication question. For an incorrect answer, display the message "No. 
+Please try again." and let the student try the same question repeatedly
+until the student finally gets it right.
+"""
+import random
+
+def question():
+    digit1 = random.randrange(10)
+    digit2 = random.randrange(10)
+    return (f'How much is {digit1} * {digit2}?', digit1*digit2)
+
+
+q, a = question()
+print(q)
+
+guess = int(input('Enter answer (-1 to exit): '))
+
+while guess != -1:
+    if guess == a:
+        print("Very good!")
+        
+        q, a = question()
+        print(q)
+        guess = int(input('Enter answer (-1 to exit): '))
+        
+    else:
+        print("Wrong, Please try again")
+        guess = int(input('Enter answer (-1 to exist): '))
+        
+    print()
+        
+        
+
+
+
+
+"""
 import random
   
 def create_question():
-    """Creates a new question and returns the question text and answer."""
+    #""Creates a new question and returns the question text and answer
     # get two random numbers between 0 and 9
     digit1 = random.randrange(10)
     digit2 = random.randrange(10)
@@ -11,7 +57,7 @@ def create_question():
     return (f'How much is {digit1} * {digit2}?', digit1 * digit2)
 
 def check_answer(guess, answer):
-    """Check if user answered correctly and return a Boolean."""
+    #Check if user answered correctly and return a Boolean
     if guess != answer:
         print('No. Please try again.')
         return False
@@ -35,7 +81,7 @@ while guess != -1:
     guess = int(input('Enter your answer (-1 to exit): '))
 
 print('Thanks for playing!')
-
+"""
 ##########################################################################
 # (C) Copyright 2019 by Deitel & Associates, Inc. and                    #
 # Pearson Education, Inc. All Rights Reserved.                           #

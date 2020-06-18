@@ -21,8 +21,7 @@ YT.dtypes
 
 # pickup, dropoff, and duration were stored as strings!!!!
 # Let's convert them back to datetimes
-YT['pickup'] = pd.to_datetime(YT['pickup'],
-                              infer_datetime_format=True)
+YT['pickup'] = pd.to_datetime(YT['pickup'],infer_datetime_format=True)
 
 
 YT['dropoff'] = pd.to_datetime(YT['dropoff'],

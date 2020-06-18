@@ -1,18 +1,75 @@
 # Exercise 4.10
-"""Guess the number."""
+"""
+4.10 (GUESS THE NUMBER) Write a script that plays “guess the number.” Choose
+ the number to be guessed by selecting a random integer in the 
+ range 1 to 1000. Do not reveal this number to the user. Display the prompt
+ "Guess my number between 1 and 1000 with the fewest guesses:". The player 
+ inputs a first guess. If the guess is incorrect, 
+ display "Too high. Try again." or "Too low. Try again." as appropriate to 
+ help the player “zero in” on the correct answer, then prompt the user for
+ the next guess. When the user enters the correct answer, 
+ display "Congratulations. You guessed the number!", and allow the user to 
+ choose whether to play again.
+"""
+
+import random
+
+def randnum():
+    return random.randrange(1,1001)
+
+
+Correct = False
+Newgame = False
+
+def newgame():
+    number = randnum()
+    print(number)
+    return number
+
+    
+number = newgame()
+
+
+while Correct == False or Newgame == True:
+
+    
+    guess = int(input('Enter guess: '))
+    
+    if guess > number:
+        print('Number is too high')
+        
+    elif guess < number:
+        print('Number is too low')
+        
+    elif guess == number:
+        print('Congrats, You guessed the number!')
+        Correct  = True
+        
+        Newgamequest = input("Do you want to play again? Y / N: ")
+        if Newgamequest == 'Y':
+            Newgame = True
+            number = newgame()
+        else:
+            Newgame = False
+            print('Have a good day')
+            
+
+
+"""
+#Guess the number.
 import random
 
 def get_number():
-    """Create a new number to guess."""
+    #Create a new number to guess.
     return random.randrange(1, 1001)
    
 def new_game():
-    """Start a new game."""
+    #Start a new game.
     return get_number()
     print('Guess a number between 1 and 1000')
 
 def check_guess(guess, answer):
-    """Check user input"""
+    #Check user input
     correct = False
     
     if (guess < answer):
@@ -43,7 +100,7 @@ while not game_over:
        game_over = True
 
 print('Thanks for playing!')
-
+"""
 ##########################################################################
 # (C) Copyright 2019 by Deitel & Associates, Inc. and                    #
 # Pearson Education, Inc. All Rights Reserved.                           #

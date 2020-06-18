@@ -70,11 +70,11 @@ letters
 
 letters = []                                    # Added by TAA
 
-letters = letters + 'Python'                    # Added by TAA - Won't Work
+letters = letters + 'Python'                    # Added by TAA - Won't Work because combining string to list
 
 letters                                         # Added by TAA
 
-letters[len(letters):len(letters)] = ["Python"] # Added by TAA
+letters[len(letters):len(letters)] = ["Python"] # Added by TAA. Putting string into list
 
 letters                                         # Added by TAA
 
@@ -201,7 +201,7 @@ tuple2 = tuple1
 
 tuple2
 
-hash(tuple1)                                # Added by TAA
+hash(tuple1)                                # Added by TAA. Numeric ID
 
 hash(tuple2)                                # Added by TAA
 
@@ -225,11 +225,11 @@ numbers
 # Tuples May Contain Mutable Objects
 student_tuple = ('Amanda', 'Blue', [98, 75, 87])
 
-hash(student_tuple)                         # Added by TAA - Won't work
+hash(student_tuple)                         # Added by TAA - Won't work because it only works on immutable objects
 
 id(student_tuple)                           # Added by TAA
 
-student_tuple[2][1] = 85
+student_tuple[2][1] = 85                    # Changes list inside a tuple
 
 student_tuple
 
@@ -281,11 +281,12 @@ single
 # furnishing, performance, or use of these programs.                     #
 ##########################################################################
 # Section 5.4 snippets
-student_tuple = ('Amanda', [98, 85, 87])
+student_tuple = ('Amanda', [98, 85, 87], 5)
 
-first_name, grades = student_tuple
+first_name, grades, age = student_tuple      #unpacking tuple
 
 first_name
+age
 
 grades
 

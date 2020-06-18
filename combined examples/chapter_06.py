@@ -71,7 +71,7 @@ days_per_month
 
 for month, days in days_per_month.items():
     print(f'{month} has {days} days')
-
+ 
 # Cleaning up at end of snippet
 get_ipython().magic('reset -f')
 get_ipython().magic('clear')
@@ -453,6 +453,7 @@ get_ipython().magic('clear')
 # furnishing, performance, or use of these programs.                     #
 ##########################################################################
 # Section 6.2.9 snippets
+# Swaps the keys and values
 months = {'January': 1, 'February': 2, 'March': 3}
 
 months2 = {number: name for name, number in months.items()}
@@ -461,7 +462,7 @@ months2
 
 grades = {'Sue': [98, 87, 94], 'Bob': [84, 95, 91]}
 
-grades2 = {k: sum(v) / len(v) for k, v in grades.items()}
+grades2 = {k: sum(x) / len(x) for k, x in grades.items()}
 
 grades2
 

@@ -1,40 +1,35 @@
-# Exercise 3.17
-"""Print four triangles of asterisks, one below the other"""
-
-# first triangle
-for row in range(1, 11):
-    for column in range(1, row + 1):
-        print('*', end='')
-    print()
-print()
-
-# second triangle
-for row in range(10, 0, -1):
-    for column in range(1, row + 1):
-        print('*', end='')
-    print()
-print()
-
-# third triangle
-for row in range(10, 0, -1):
-    for space in range(10, row, -1):
-        print(' ', end='')
-    for column in range(1, row + 1):
-        print('*', end='')
-    print()
-print()
-
-# fourth triangle
-for row in range(10, 0, -1):
-    for space in range(1, row):
-        print(' ', end='')
-    for column in range(10, row - 1, -1):
-        print('*', end='')
-    print()
-print()
+# Exercise 3.8
+"""(Arithmetic, Smallest and Largest) In Exercise 2.10, you wrote a script
+ that input three integers, then displayed the sum, average, product, smallest
+ and largest of those values. Reimplement your script with a loop that inputs
+ four integers.
 
 
- 
+"""
+
+total = 0
+product = 1
+smallest = 100000000000000000000000000000000000000000000000
+largest = -100000000000000000000000000000000000000000000000
+count = 0
+
+for i in range(4):
+    number = int(input('Enter an integer: '))
+    total += number
+    product *= number
+    count = count + 1
+    
+    if number < smallest:
+        smallest = number
+
+    if number > largest:
+        largest = number
+
+print('Sum:', total)
+print('Average:', (total) / count)
+print('Product:', product)
+print('Smallest:', smallest)
+print('Largest:', largest)
 
 ##########################################################################
 # (C) Copyright 2019 by Deitel & Associates, Inc. and                    #

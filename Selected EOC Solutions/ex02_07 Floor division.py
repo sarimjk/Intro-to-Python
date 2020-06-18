@@ -1,21 +1,26 @@
-# Exercise 2.11
-number = int(input('Enter a five-digit integer:'))
+# Exercise 2.7
+"""
+2.7 (MULTIPLES) Use if statements to determine whether 1024 is a multiple of 
+4 and whether 2 is a multiple of 10. (Hint: Use the remainder operator.)
+"""
 
-digit1 = number // 10000
-number = number % 10000
+if 1024 % 4 == 0:
+    print("Yes, 1024 is multiple of 4")
 
-digit2 = number // 1000
-number = number % 1000
+if 2 % 10 == 0:
+    print("Yes, 10 is multiple of 2")
 
-digit3 = number // 100
-number = number % 100
 
-digit4 = number // 10
 
-digit5 = number % 10
+#Solution
 
-print(digit1, ' ', digit2, ' ', digit3, ' ', digit4, ' ', digit5)
+if 1024 % 4 == 0:
+    print('1024 is a multiple of 4')
+    
+if 2 % 10 == 0:
+    print('2 is a multiple of 10')
 
+    
 ##########################################################################
 # (C) Copyright 2019 by Deitel & Associates, Inc. and                    #
 # Pearson Education, Inc. All Rights Reserved.                           #

@@ -1,13 +1,30 @@
-# Exercise 3.22
-for i in range(2):
-    value = int(input('Enter an integer (-1 to break): '))
-    print('You entered:', value)
-    
-    if value == -1:
-        break
-else:
-    print('The loop terminated without executing the break')
-    
+# Exercise 4.7
+"""
+4.7 (DATE AND TIME) Python’s datetime module contains a datetime type with a 
+method today that returns the current date and time as a datetime object.
+Write a parameterless date_and_time function containing the following 
+statement, then call that function to display the current date and time:
+    print(datetime.datetime.today())
+On our system, the date and time display in the following format:
+    2018-06-08 13:04:19.214180
+"""
+
+import datetime
+
+def dateandtime():
+    print(datetime.datetime.today())
+
+
+dateandtime()
+
+"""
+import datetime
+
+def date_and_time():
+    print(datetime.datetime.today())
+
+date_and_time()
+"""    
 ##########################################################################
 # (C) Copyright 2019 by Deitel & Associates, Inc. and                    #
 # Pearson Education, Inc. All Rights Reserved.                           #

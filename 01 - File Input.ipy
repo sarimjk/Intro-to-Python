@@ -8,11 +8,13 @@ Created on Sun Jun 14 20:19:49 2020
 import pandas as pd
 
 # Read in csv file
-YT = pd.read_csv("yellow_tripdata_2017-06.csv")
+#YT = pd.read_csv("yellow_tripdata_2017-06.csv")
 
 # !!!!!
 # If you run into trouble reading this file, use the line below:
-# YT = pd.read_csv("Yellow_Sample.csv")    
+#YT = pd.read_csv(r"C:\Users\skhan\Documents\BIS497\BIS497 Repos\Intro-to-Python\Files\yellow_Sample.csv") 
+
+YT = pd.read_csv("Yellow_Sample.csv") 
 
 # Look at DataFrame
 YT
@@ -52,7 +54,6 @@ YT.describe()
 YT['trip_distance'].describe()
 
 # Still a little hard to read, so can use .apply:
-
 YT['trip_distance'].describe().apply("{0:.2f}".format)
 
 # Or can use pd.set_option to apply the format globally:
@@ -62,17 +63,14 @@ YT[['trip_distance','fare_amount']].describe()
 
 # Might sometime want to worry about memory usage with large sets
 YT.memory_usage(index=False)
-
 YT[['total_amount','VendorID']].dtypes
-
 YT[['total_amount','VendorID']].astype('category').memory_usage(deep=True)
 
 # Converting columns to more usable types
-
 YT[['tpep_pickup_datetime','tpep_dropoff_datetime']].dtypes
 
 YT['tpep_pickup_datetime'].head()
-
+#adds new column called pickup
 YT['pickup'] = pd.to_datetime(YT['tpep_pickup_datetime'],
                               infer_datetime_format=True)
 
@@ -87,7 +85,7 @@ del YT['tpep_dropoff_datetime']
 
 YT['duration'] = YT['dropoff'] - YT['pickup']
 
-YT[['pickup','dropoff','duration']].head()
+YT[['pickup','dropoff','duration']].head(10)
 
 # Deleting rows ("observations") that we don't want/need
 

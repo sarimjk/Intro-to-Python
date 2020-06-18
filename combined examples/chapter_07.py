@@ -169,7 +169,7 @@ np.arange(5, 10)
 np.arange(10, 1, -2)
 
 # Creating Floating-Point Ranges with linspace
-np.linspace(0.0, 1.0, num=5)
+np.linspace(0.0, 5.0, num=5)
 
 # Reshaping an array
 np.arange(1, 21).reshape(4, 5)
